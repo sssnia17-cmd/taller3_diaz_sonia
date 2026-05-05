@@ -1,0 +1,69 @@
+---
+title: "Herpetofauna del Caribe Colombiano- Analisis Exploratorio"
+subtitle: "Taller Semana 3 . Curso 20953"
+author: "Sonia del Carmen Diaz Arrieta"
+date: "2026-05-05"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: false
+    theme: cosmo
+---
+## Introducción
+
+En el presente documento se realiza un análisis exploratorio de un conjunto de datos sobre la herpetofauna del Caribe colombiano, específicamente en los departamentos de Atlántico y Magdalena durante el año 2023. El dataset incluye información de *reptiles* y anfibios, lo que permite examinar patrones de distribución y características biológicas en diferentes ecosistemas.
+
+Las variables principales que se analizarán son **ecosistema**, **clase**, **longitud_svl_mm**, **peso_g** y `departamento`, las cuales permiten describir la distribución espacial y las características morfométricas de los organismos registrados.
+
+Este tipo de análisis es importante para comprender la biodiversidad regional y apoyar procesos de investigación y conservación en ecosistemas del Caribe colombiano.
+
+```{r}
+#| label: cargar-datos
+
+herp <- read.csv("datos/herpetofauna_caribe_listo.csv")
+
+dim(herp)
+head(herp)
+str(herp)
+```
+El dataset contiene información sobre diferentes especies de herpetofauna, incluyendo variables ecológicas y morfométricas que permiten analizar su distribución.
+
+## Registros por ecosistema
+
+```{r}
+#| label: grafico-ecosistema
+#| fig-cap: "Distribución de registros por ecosistema. Fuente: datos del curso (2023)."
+
+barplot(table(herp$ecosistema),
+        col = "orange",
+        main = "Registros por ecosistema",
+        xlab = "Ecosistema",
+        ylab = "Frecuencia")
+```
+Se observan diferencias en la cantidad de registros por ecosistema, lo que puede indicar variaciones en la diversidad o en el esfuerzo de muestreo.
+
+## Longitud por clase
+
+```{r}
+#| label: grafico-clase
+#| fig-cap: "Distribución de la longitud por clase. Fuente: datos del curso (2023)."
+
+boxplot(longitud_svl_mm ~ clase, data = herp,
+        col = c("pink", "green"),
+        main = "Longitud por clase",
+        xlab = "Clase",
+        ylab = "Longitud (mm)")
+```
+Se evidencian diferencias en la longitud corporal entre reptiles y anfibios.
+
+::: {.callout-warning}
+Una limitación del análisis es el tamaño del dataset, lo que puede afectar la representatividad de los resultados.
+:::
+## Reflexiones
+
+El uso de Quarto permite integrar código y texto en un solo documento, facilitando la reproducibilidad y la comunicación científica.
+
+Si se agregan nuevos datos, solo es necesario actualizar el archivo CSV y volver a ejecutar el documento.
+
+Un repositorio público en GitHub permite que cualquier persona acceda al análisis, promoviendo la transparencia en la ciencia.  
