@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sonia del Carmen Diaz Arrieta">
-<meta name="dcterms.date" content="2026-05-05">
+<meta name="author" content="Sonia del Carmen Díaz Arrieta">
+<meta name="dcterms.date" content="2026-05-16">
 
-<title>Herpetofauna del Caribe Colombiano- Analisis Exploratorio</title>
+<title>Herpetofauna del Caribe Colombiano- Análisis Exploratorio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,7 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Herpetofauna del Caribe Colombiano- Analisis Exploratorio</h1>
+<h1 class="title">Herpetofauna del Caribe Colombiano- Análisis Exploratorio</h1>
 <p class="subtitle lead">Taller Semana 3 . Curso 20953</p>
 </div>
 
@@ -106,14 +106,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Sonia del Carmen Diaz Arrieta </p>
+             <p>Sonia del Carmen Díaz Arrieta </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 5, 2026</p>
+      <p class="date">May 16, 2026</p>
     </div>
   </div>
   
@@ -127,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>En el presente documento se realiza un análisis exploratorio de un conjunto de datos sobre la herpetofauna del Caribe colombiano, específicamente en los departamentos de Atlántico y Magdalena durante el año 2023. El dataset incluye información de <em>reptiles</em> y anfibios, lo que permite examinar patrones de distribución y características biológicas en diferentes ecosistemas.</p>
+<p>En el presente documento se realiza un análisis exploratorio de un conjunto de datos sobre la herpetofauna del Caribe colombiano, específicamente en los departamentos de Atlántico, Magdalena y Córdoba durante el año 2023. El dataset incluye información de <em>reptiles</em> y <em>anfibios</em>, lo que permite examinar patrones de distribución y características biológicas en diferentes ecosistemas.</p>
 <p>Las variables principales que se analizarán son <strong>ecosistema</strong>, <strong>clase</strong>, <strong>longitud_svl_mm</strong>, <strong>peso_g</strong> y <code>departamento</code>, las cuales permiten describir la distribución espacial y las características morfométricas de los organismos registrados.</p>
 <p>Este tipo de análisis es importante para comprender la biodiversidad regional y apoyar procesos de investigación y conservación en ecosistemas del Caribe colombiano.</p>
 <div class="cell">
@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="registros-por-ecosistema">Registros por ecosistema</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(herp<span class="sc">$</span>ecosistema),</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"orange"</span>,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="st">"purple"</span>,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Registros por ecosistema"</span>,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Ecosistema"</span>,</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Frecuencia"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Se observan diferencias en la cantidad de registros por ecosistema, lo que puede indicar variaciones en la diversidad o en el esfuerzo de muestreo.</p>
+<p>El gráfico muestra que los registros no se distribuyen de manera uniforme entre los ecosistemas. Algunos ecosistemas presentan mayor frecuencia de registros, lo cual puede relacionarse con una mayor presencia de especies, mejores condiciones para el muestreo o mayor facilidad de acceso a esas zonas. Esta diferencia también puede indicar que el esfuerzo de observación no fue igual en todos los ecosistemas.</p>
 </section>
 <section id="longitud-por-clase" class="level2">
 <h2 class="anchored" data-anchor-id="longitud-por-clase">Longitud por clase</h2>
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Se evidencian diferencias en la longitud corporal entre reptiles y anfibios.</p>
+<p>El boxplot permite comparar la longitud corporal entre las clases registradas. En general, se observan diferencias entre reptiles y anfibios, lo cual es esperable porque ambos grupos poseen características corporales distintas. Esta comparación ayuda a identificar patrones morfométricos básicos dentro del conjunto de datos.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -256,9 +256,9 @@ Warning
 </section>
 <section id="reflexiones" class="level2">
 <h2 class="anchored" data-anchor-id="reflexiones">Reflexiones</h2>
-<p>El uso de Quarto permite integrar código y texto en un solo documento, facilitando la reproducibilidad y la comunicación científica.</p>
-<p>Si se agregan nuevos datos, solo es necesario actualizar el archivo CSV y volver a ejecutar el documento.</p>
-<p>Un repositorio público en GitHub permite que cualquier persona acceda al análisis, promoviendo la transparencia en la ciencia.</p>
+<p>Un documento Quarto tiene la ventaja de integrar texto, código, resultados y gráficos en un solo archivo, lo que facilita la comunicación de resultados biológicos de forma clara y reproducible. A diferencia de un script <code>.R</code> simple, Quarto permite explicar cada paso del análisis y presentar los resultados de una manera más ordenada para otros lectores.</p>
+<p>Si se actualizaran los datos añadiendo registros de 2024, una persona que quiera reproducir el análisis debería descargar o actualizar el archivo CSV dentro de la carpeta <code>datos/</code>, verificar que las variables mantengan los mismos nombres y volver a renderizar el documento Quarto. De esta forma, los gráficos y resultados se generarían nuevamente con la información actualizada.</p>
+<p>Que el repositorio sea público en GitHub significa que cualquier persona con el enlace puede consultar los archivos del proyecto, revisar el código utilizado y verificar los resultados obtenidos. Esto favorece la ciencia abierta porque permite transparencia, colaboración y revisión por parte de otros investigadores o docentes.</p>
 </section>
 
 </main>
